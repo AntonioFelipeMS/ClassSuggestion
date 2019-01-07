@@ -1,4 +1,4 @@
-package com.classSuggestion.classsuggestionapi;
+package classSuggestion.classSuggestion.classsuggestionapi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
