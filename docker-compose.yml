@@ -1,0 +1,10 @@
+version: '2'
+services:
+  postgres:
+    container_name: sample_db
+    image: postgres:9.6-alpine
+    hostname: postgres
+    environment:
+    - POSTGRES_DB=sample
+    ports:
+    - 5432:5432

@@ -64,6 +64,19 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.0</version>
 		</dependency>
+        <dependency>
+            <groupId>nl.42</groupId>
+            <artifactId>spring-boot-starter-docker</artifactId>
+            <version>1.0.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>nl.42</groupId>
+            <artifactId>spring-boot-docker-postgres</artifactId>
+            <version>1.0.1</version>
+            <scope>provided</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
