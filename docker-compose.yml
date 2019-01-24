@@ -5,7 +5,6 @@ services:
     image: postgres:9.6-alpine
     hostname: postgres
     user: postgres
-    password: postgres
     environment:
     - POSTGRES_DB=sample
     ports:

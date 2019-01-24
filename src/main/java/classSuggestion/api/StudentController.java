@@ -1,11 +1,12 @@
 package classSuggestion.api;
 
-import classSuggestion.api.to.ClassListTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
 
 
 @RestController
@@ -13,9 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentController {
 
     @GetMapping(value = "/result")
-    public ResponseEntity<String> getClassList(@RequestBody ClassListTO request)
+    public ResponseEntity<String> getClassList(@RequestBody ArrayList<Integer> request, @RequestBody Integer amount)
     {
-
         return ResponseEntity.ok("Spring boot is running cozy and warm!");
     }
 }
