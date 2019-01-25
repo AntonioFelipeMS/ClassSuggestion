@@ -6,6 +6,6 @@ services:
     hostname: postgres
     user: postgres
     environment:
-    - POSTGRES_DB=sample
+    - POSTGRES_DB=sampledb
     ports:
     - 5432:5432
