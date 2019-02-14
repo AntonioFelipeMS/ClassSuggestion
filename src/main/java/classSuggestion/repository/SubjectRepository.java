@@ -6,9 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface SubjectRepository extends CrudRepository<Subject, Integer> {
 
-    @Query("select s from Subject s where subject.id not in := list")
-    List<Subject> notAttendedYet(@Param("list") List<Integer> list);
 }
