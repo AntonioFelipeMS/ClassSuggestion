@@ -11,7 +11,7 @@ public class Subject {
     }
 
     @Id
-    private Integer id;
+    private Long id;
 
     @Column
     private String description;
@@ -25,7 +25,7 @@ public class Subject {
     @Column
     private boolean credit_lockable;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

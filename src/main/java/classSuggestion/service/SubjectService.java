@@ -3,19 +3,19 @@ package classSuggestion.service;
 import classSuggestion.domain.Subject;
 import classSuggestion.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import java.util.List;
 import java.util.Optional;
 
-public class SubjectRepositoryService {
+public class SubjectService {
 
     @Autowired
     private SubjectRepository subjectRepository;
 
-    public Optional<Subject> getSubject(Integer id) {
+    public Optional<Subject> getSubject(Long id) {
         return this.subjectRepository.findById(id);
     }
 
-    public Iterable<Subject> getAllSubjects(){
-        return this.subjectRepository.findAll();
+    public List<Subject> getUnattendedSubjects(List<Integer> subjectsIds) {
+        return this.subjectRepository.findMissingSubjects(subjectsIds);
     }
 }
