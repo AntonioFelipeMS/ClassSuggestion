@@ -8,12 +8,10 @@ public class SubjectListTO {
 
     private List<Subject> subjectList;
 
-    public void setSubjectList(List<Subject> classList){
-        this.subjectList = classList;
-    }
+    public SubjectListTO(List<Subject> subjects){
 
-    public List<Subject> getSubjectList(List<Class> classList){
-        return subjectList;
+        this.subjectList = subjects;
+
     }
 
 }

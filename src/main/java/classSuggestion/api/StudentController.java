@@ -1,10 +1,11 @@
 package classSuggestion.api;
 
+import classSuggestion.api.facade.SubjectServiceFacade;
+import classSuggestion.api.to.SubjectListTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -13,9 +14,14 @@ import java.util.ArrayList;
 @RequestMapping(value = "")
 public class StudentController {
 
+    @Autowired
+    private SubjectServiceFacade subjectServiceFacade;
+
     @GetMapping(value = "/result")
-    public ResponseEntity<String> getClassList(@RequestBody ArrayList<Integer> request, @RequestBody Integer amount)
+    public ResponseEntity<SubjectListTO> getMissingSubjects(@RequestHeader ArrayList<Integer> request, @RequestHeader(required = false) Integer amount)
     {
-        return ResponseEntity.ok("Spring boot is running cozy and warm!");
+        SubjectListTO subjectListTO;
+        subjectListTO = subjectServiceFacade.missingSubjects(request);
+        return ResponseEntity.status(HttpStatus.OK).body(subjectListTO);
     }
 }

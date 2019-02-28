@@ -1,17 +1,17 @@
 package classSuggestion.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "subject")
 public class Subject {
 
     public Subject() {
     }
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column
     private String description;
@@ -20,12 +20,12 @@ public class Subject {
     private Integer semester;
 
     @Column
-    private String weight;
+    private Integer weight;
 
-    @Column
-    private boolean credit_lockable;
+    @Column(name = "credit_lockable")
+    private boolean creditLockable;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -37,11 +37,12 @@ public class Subject {
         return semester;
     }
 
-    public String getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public boolean isCredit_lockable() {
-        return credit_lockable;
+    public boolean isCreditLockable() {
+        return creditLockable;
     }
+
 }
