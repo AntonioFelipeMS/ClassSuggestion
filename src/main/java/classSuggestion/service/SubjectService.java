@@ -14,11 +14,7 @@ public class SubjectService {
     @Autowired
     private SubjectRepository subjectRepository;
 
-    public Optional<Subject> getSubject(Integer id) {
-        return this.subjectRepository.findById(id);
-    }
-
-    public List<Subject> getUnattendedSubjects(List<Integer> subjectsIds) {
-        return this.subjectRepository.findMissingSubjects(subjectsIds);
+    public List<Subject> getUnattendedSubjects(List<Integer> idList) {
+        return this.subjectRepository.findByIdNotIn(idList);
     }
 }

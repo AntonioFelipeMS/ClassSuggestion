@@ -13,6 +13,5 @@ import java.util.Optional;
 
 public interface SubjectRepository extends JpaRepository<Subject, Integer> {
 
-    @Query("FROM Subject s WHERE s.id NOT in:idList")
-    List<Subject> findMissingSubjects(@Param("idList") List<Integer> subjectIds);
+    List<Subject> findByIdNotIn(List<Integer> idList);
 }

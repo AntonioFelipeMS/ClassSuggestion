@@ -45,4 +45,23 @@ public class Subject {
         return creditLockable;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setSemester(Integer semester) {
+        this.semester = semester;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public void setCreditLockable(boolean creditLockable) {
+        this.creditLockable = creditLockable;
+    }
 }

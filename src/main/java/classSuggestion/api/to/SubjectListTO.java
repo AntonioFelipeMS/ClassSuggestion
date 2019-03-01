@@ -14,4 +14,11 @@ public class SubjectListTO {
 
     }
 
+    public List<Subject> getSubjectList() {
+        return subjectList;
+    }
+
+    public void setSubjectList(List<Subject> subjectList) {
+        this.subjectList = subjectList;
+    }
 }
